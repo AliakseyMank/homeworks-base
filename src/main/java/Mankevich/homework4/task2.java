@@ -1,4 +1,4 @@
-package org.rodion.homeworks.homework3;
+package Mankevich.homework4;
 
 import java.util.Random;
 import java.util.Scanner;
