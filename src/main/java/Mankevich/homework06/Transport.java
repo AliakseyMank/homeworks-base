@@ -1,47 +1,31 @@
 package Mankevich.homework06;
 
-public abstract class Transport {
-    int powerVat;
-    int maxSpeed;
-    int weight;
-    String brand;
+public class Transport {
+    int powerHp =0;
+    int maxSpeed=0;
+    int weight=0;
+    String brand="";
 
-    public int getWeight() {
-        return weight;
+    private double kwInHp(int powerHp){
+        this.powerHp = powerHp;
+        double powerkW = 0.74* powerHp;
+        return powerkW;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    //зачем передавать значения полям если они и так имеют такие же названия
+    Transport(int powerHp, int maxSpeed, int weight, String brand){
+        this.powerHp = powerHp;
+        this.maxSpeed=maxSpeed;
+        this.weight=weight;
+        this.brand=brand;
+    }
+    public void showInfo(){
+        System.out.println("Power HP: "+this.powerHp);
+        System.out.println("Max speed: "+this.maxSpeed);
+        System.out.println("Weight: "+this.weight);
+        System.out.println("Brand: "+this.brand);
+        System.out.println("Powet kW: "+kwInHp(this.powerHp));
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        maxSpeed = maxSpeed;
-    }
-
-    public int getPowerVat() {
-        return powerVat;
-    }
-
-    public void setPowerVat(int powerVat) {
-        this.powerVat = powerVat;
-    }
-    public double calculatePower(int power){
-        double powerMuscle = power*0.76;
-        return powerMuscle;
-    }
-    public abstract String showInfo();
 }
 

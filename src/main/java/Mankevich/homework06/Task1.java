@@ -2,58 +2,28 @@ package Mankevich.homework06;
 
 public class Task1 {
     public static void main(String[] args) {
-        /*Создание объекта конечного класса и присвоение ему ссылки.
-        * Присваивание значения полям. Легковой автомобиль.*/
-        PassengerCar passCar = new PassengerCar();
-        passCar.brand="Shkoda";
-        passCar.bodyTipe="sedan";
-        passCar.numberOfWheels=4;
-        passCar.weight=1500;
-        passCar.maxSpeed=140;
-        passCar.powerVat=75;
-        passCar.fuelCons=6.5;
 
-        /*Создание объекта конечного класса и присвоение ему ссылки.
-         * Присваивание значения полям. Грузовой автомобиль.*/
-        FreightCar freightCar = new FreightCar();
-        freightCar.brand="Tasmania";
-        freightCar.lifting=2000;
-        freightCar.maxSpeed=100;
-        freightCar.numberOfWheels=5;
-        freightCar.weight=2000;
-        freightCar.powerVat=300;
-
-        /*Создание объекта конечного класса и присвоение ему ссылки.
-         * Присваивание значения полям. Пассажирский самолёт.*/
-        CivilAircraft civilAircraft = new CivilAircraft();
-        civilAircraft.wingspan=200;
-        civilAircraft.minTakeoff=1500;
-        civilAircraft.brand="Cattery";
-        civilAircraft.maxSpeed=600;
-        civilAircraft.powerVat=500;
-        civilAircraft.weight=25000;
-        civilAircraft.numberOfPassengers=200;
 
         /*Создание объекта конечного класса и присвоение ему ссылки.
          * Присваивание значения полям. Военный самолёт.*/
-        WarPlane warPlane = new WarPlane();
-        warPlane.baleOut=true;
-        warPlane.brand="Belvia";
-        warPlane.maxSpeed=500;
-        warPlane.minTakeoff=2000;
-        warPlane.numbOfRockets=10;
-        warPlane.powerVat=250;
-        warPlane.weight=20000;
-        warPlane.wingspan=150;
-
-        System.out.println("Легковой автомобиль");
-        passCar.showInfo();
-        System.out.println("Грузовой автомобиль");
-        freightCar.showInfo();
-        System.out.println("Пассажирский самолёт");
-        civilAircraft.showInfo();
-        System.out.println("Военный самолёт");
+        WarPlane warPlane = new WarPlane(500,200,1500,"belavia",150,1500,5,true);
         warPlane.showInfo();
-        passCar.met1(5);
+        System.out.println();
+        System.out.println();
+
+        CivilAircraft civilAircraft = new CivilAircraft(500,200,1500,"Air_Jordan",200,2000,55,false);
+        civilAircraft.showInfo();
+        System.out.println();
+        System.out.println();
+
+        PassengerCar passengerCar = new PassengerCar(100,235,1500,"bmw",4,4,"sedan",5);
+        passengerCar.showInfo();
+        System.out.println();
+        System.out.println();
+
+        FreightCar freightCar = new FreightCar(350,250,2600,"Scalia",8,5,1000,3500);
+        freightCar.showInfo();
+        System.out.println();
+        System.out.println();
     }
 }

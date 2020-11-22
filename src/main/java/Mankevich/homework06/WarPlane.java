@@ -1,38 +1,20 @@
 package Mankevich.homework06;
 
-public class WarPlane extends AirTransport{
-    int numbOfRockets;
-    boolean baleOut;
-    String strBaleOut;
+public class WarPlane extends AirTransport {
+    private int numberOfRockets = 0;
+    private boolean ejectSystem = false;
 
-    public int getNumbOfRockets() {
-        return numbOfRockets;
+    public WarPlane(int powerHp,int maxSpeed, int weight , String brand, int wingspan,int minTakeoff,int numberOfRockets,boolean ejectSystem) {
+        super(powerHp, maxSpeed, weight, brand, wingspan, minTakeoff);
+        this.numberOfRockets = numberOfRockets;
+        this.ejectSystem = ejectSystem;
     }
 
-    public void setNumbOfRockets(int numbOfRockets) {
-        this.numbOfRockets = numbOfRockets;
-    }
-
-    public boolean isBaleOut() {
-        return baleOut;
-    }
-
-    public void setBaleOut(boolean baleOut) {
-        this.baleOut = baleOut;
-    }
-
-    {
-        if (baleOut) {
-            strBaleOut = "Есть возможность катапультирования";
-        } else {
-            strBaleOut = "Нет возможности катапультирования";
-        }
-    }
     @Override
-    public String showInfo() {
-        System.out.printf("Брэнд- %s\n Мощность в ватах - %s\nМощность в лошадиных силах - %s\nМаксимальная скорость - %s\nВес " +
-                        "транспорта в кг - %s\nРазмах крыльев - %s\nМинимальная длина взлётной полосы в м - %s\n%s\nКоличество рокет на борту - %s\n "
-                ,brand,powerVat,calculatePower(powerVat),maxSpeed,weight,wingspan,minTakeoff,strBaleOut,numbOfRockets);
-        return null;
+    public void showInfo() {
+        System.out.println("War plane");
+        super.showInfo();
+        System.out.println("Is eject system: "+this.ejectSystem);
+        System.out.println("Number of rockets: "+this.numberOfRockets);
     }
 }

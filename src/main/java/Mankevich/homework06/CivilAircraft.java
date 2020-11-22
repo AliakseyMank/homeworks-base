@@ -1,12 +1,21 @@
 package Mankevich.homework06;
 
 public class CivilAircraft extends AirTransport {
-    int numberOfPassengers;
+    private int numberOfPassengers = 0;
+    private boolean bussnesClass = false;
 
-    public String showInfo() {
-        System.out.printf("Брэнд- %s\n Мощность в ватах - %s\nМощность в лошадиных силах - %s\nМаксимальная скорость - %s\nВес " +
-                        "транспорта в кг - %s\nРазмах крыльев в м - %s\nМинимальная длина взлётной полосы - %s\nЧисло пассажиров - %s\n"
-                , brand, powerVat, calculatePower(powerVat), maxSpeed, weight, wingspan, minTakeoff, numberOfPassengers);
-        return null;
+    public CivilAircraft(int powerHp,int maxSpeed, int weight , String brand, int wingspan,int minTakeoff,int numberOfPassengers, boolean bussnesClass){
+        super(powerHp, maxSpeed, weight, brand, wingspan, minTakeoff);
+        this.bussnesClass = bussnesClass;
+        this.numberOfPassengers = numberOfPassengers;
+
+    }
+
+    @Override
+    public void showInfo() {
+        System.out.println("Civil aircraft");
+        super.showInfo();
+        System.out.println("Number of passengers: "+this.numberOfPassengers);
+        System.out.println("Is business class: "+this.bussnesClass);
     }
 }

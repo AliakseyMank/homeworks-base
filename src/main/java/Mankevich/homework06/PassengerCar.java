@@ -6,27 +6,22 @@ package Mankevich.homework06;
 
 public class PassengerCar extends TerrestrialTransport {
 
-    public void met1(int time){
-        double way = time*maxSpeed;
-        double fuel= (double) way*fuelCons/100;
-        System.out.printf("За время %s ч, автомобиль %s\nдвигаясь с максимальной скоростью %s км/ч\nпроедет %s км и израсходует %5.2f литров топлива", time, brand, maxSpeed, way, fuel);
+    private String bodyTipe = "";
+    private int countOfPeople = 0;
 
-    }
-
-    String bodyTipe;
-
-    public String getBodyTipe() {
-        return bodyTipe;
-    }
-    public void setBodyTipe(String bodyTipe) {
+    public PassengerCar(int powerHp, int maxSpeed, int weight, String brand,
+                        int numberOfWheels, int countOfFuel,String bodyTipe, int countOfPeople) {
+        super(powerHp, maxSpeed, weight, brand, numberOfWheels, countOfFuel);
         this.bodyTipe = bodyTipe;
+        this.countOfPeople = countOfPeople;
     }
 
     @Override
-    public String showInfo() {
-        System.out.printf("Брэнд- %s\n Мощность в ватах - %s\nМощность в лошадиных силах - %s\nМаксимальная скорость - %s\nВес " +
-                        "транспорта в кг - %s\nКоличество колёс - %s\nРасход - %s\nТип кузова - %s\n "
-                ,brand,powerVat,calculatePower(powerVat),maxSpeed,weight,numberOfWheels,fuelCons,bodyTipe);
-        return null;
+    public void showInfo() {
+        System.out.println("Passengers car");
+        super.showInfo();
+        System.out.println("Body tipe: "+ this.bodyTipe);
+        System.out.println("Count of people: "+this.countOfPeople);
+
     }
 }

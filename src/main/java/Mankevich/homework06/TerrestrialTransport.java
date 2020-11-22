@@ -1,26 +1,21 @@
 package Mankevich.homework06;
 
-public abstract class TerrestrialTransport extends Transport {
-    int numberOfWheels;
+public class TerrestrialTransport extends Transport {
+    protected int numberOfWheels = 0;
+    protected double countOfFuel = 0.0;
 
-    public double getFuelCons() {
-        return fuelCons;
+    public TerrestrialTransport(int powerHp, int maxSpeed, int weight, String brand, int numberOfWheels, int countOfFuel){
+        super(powerHp, maxSpeed, weight, brand);
+        this.numberOfWheels = numberOfWheels;
+        this.countOfFuel = countOfFuel;
+
     }
 
-    public void setFuelCons(int fuelCons) {
-        this.fuelCons = fuelCons;
-    }
-
-    double fuelCons;
-
-    public int getNumberOfWheels() {
-        return numberOfWheels;
-    }
-
-    public void setNumberOfWheels(int numberOfWheels) {
-        if (this.numberOfWheels<4){
-            System.out.println("Its not a car!");
-        }else
-            this.numberOfWheels = numberOfWheels;
+    @Override
+    public void showInfo() {
+        super.showInfo();
+        System.out.println("Number of wheels: "+this.numberOfWheels);
+        System.out.println("Count of fuel: "+this.countOfFuel);
     }
 }
+
